@@ -5,15 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Money Tracking Api</title>
 </head>
 <body>
     <header>
-        <h1>Money Tracking API</h1>
-        <h2>Documentation</h2>
+        <h2>Money Tracking API</h2`1    >
     </header>
-    <h1>Routes</h1>
+    
+    <div class="contents">
+        <div class="table-of-content">
+            <h4>Table of content</h4>
+            <ol>
+                <li>Overview</li>
+                <li>Base Url</li>
+                <li>Installation</li>
+                <li>Endpoints</li>
+                
+                
+            </ol>
+        </div>
+        <div class="endpoints">
+            <div class="overview">
+                <h3>Project Overview</h3>
+                <p>This API allows users to manage their expenses and income in a system. It supports basic CRUD (Create, Read, Update, Delete) operations for both income and expense records. The API is designed to handle user data related to financial tracking, including savings, payment obligations, and housing expenses.</p>
+            </div>
+            <h3>Base Url</h3>
+            <div class="code-base">
+                <p>http://localhost:4000/</p>
+            </div>
+            <p class="padding">To use this project, follow the steps below</p>
+            <h3>Installation</h3>
+            <div class="code-base">
+                <p>git clone https://github.com/woomie/restAPI</p>
+                <p>cd project-name</p>
+                <p>npm install</p>
+                <p>node index.js</p>
+            </div>
+            
+            <h3 class="padding">User Endpoints</h3>
+            <h4 class="padding">Get/income</h4>
+            <p>Retrieve all users</p> 
+            <ul>
+                <li>URL:/users</li>
+                <li>Method:GET</li>
+                <li>Response:</li>
+            </ul>
+            <div class="code-base">
+                <pre>
+                 { 
+                    "address": {
+                      "city": "Metropolis",
+                      "street": "123 Main St",
+                      "suite": "Apt. 1",
+                      "zipcode": "12345"
+                    },
+                    "email": "john.doe@example.com",
+                    "id": 1,
+                    "name": "John Doe",
+                    "username": "johndoe"
+                  },
+                  
+                </pre>
+            </div>
+            <h4 class="padding">Get/income/:id</h4>
+            <p>Retrieve a specific income by id</p>
+             
+            <ul>
+                <li>URL:/income/:id</li>
+                <li>Method:GET</li>
+                <li>Parameters: id, the unique id of the income record</li>
+                <li>Response:</li>
+            </ul>
+            <div class="code-base">
+                <pre>
+                    {
+                        "interest": 200,
+                        "others": 100,
+                        "secondary_income": 1500,
+                        "support_payment": 0,
+                        "wages": 5000
+                      }
+                      
+                  
+                </pre>
+            </div>
+            <h4 class="padding">Post/income</h4>
+            <p>create new income</p> 
+            <ul>
+                <li>URL:/income</li>
+                <li>Method:POST</li>
+                <li>Request body:</li>
+            </ul>
+            <div class="code-base">
+                <pre>
+                    {
+                        "interest": 200,
+                        "others": 100,
+                        "secondary_income": 1500,
+                        "support_payment": 0,
+                        "wages": 5000
+                      }  
+                </pre>
+               
+            </div>
+            <br>
+            <li >Response:</li>
+            <div class="code-base">
+                <pre>
+                    {
+                        "message": "A new Income was added",
+                        "data": {
+                          "id": 1,
+                          "interest": 200,
+                          "others": 100,
+                          "secondary_income": 1500,
+                          "support_payment": 0,
+                          "wages": 5000
+                        }
+                      }
+                       
+                </pre>
+            </div>
+
+            <h4 class="padding">PUT/income/:id</h4>
+            <p>retrieve a specific income by id</p> 
+            <ul>
+                <li>URL:/income/:id</li>
+                <li>Method:PUT</li>
+                <li>Parameters: id, the unique id of the income record</li>
+                <li>Response:</li>
+            </ul>
+            <div class="code-base">
+                <pre>
+                    {
+                        "interest": 200,
+                        "others": 100,
+                        "secondary_income": 1500,
+                        "support_payment": 0,
+                        "wages": 5000
+                      }  
+                </pre>
+               
+            </div>
+            <br>
+            <li >Response:</li>
+            <div class="code-base">
+                <pre>
+                    {
+                        "message": "A new Income was added",
+                        "data": {
+                          "id": 1,
+                          "interest": 200,
+                          "others": 100,
+                          "secondary_income": 1500,
+                          "support_payment": 0,
+                          "wages": 5000
+                        }
+                      }
+                       
+                </pre>
+            </div>
+            <h4 class="padding">DELETE/income/:id</h4>
+            <p>retrieve a specific income by id</p> 
+            <ul>
+                <li>URL:/income/:id</li>
+                <li>Method:DELETE</li>
+                <li>Parameters: id, the unique id of the income record</li>
+                <li>Response:</li>
+            </ul>
+            <div class="code-base">
+                <pre>
+                    {
+                        "message": "Income deleted successfully"
+                      }
+                      
+                  
+                </pre>
+            </div>
+        </div>
+    </div>
+    
+    
 
 </body>
 </html>
