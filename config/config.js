@@ -6,5 +6,5 @@ admin.initializeApp({
     databaseURL: "https://restapi-1d162-default-rtdb.firebaseio.com"
   });
 
-const database = admin.database(); // Use .database() instead of .firestore()
+const database = admin.database(); 
 module.exports = database;
