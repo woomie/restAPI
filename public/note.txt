@@ -2,7 +2,7 @@ steps I have taken for documentation
 //project setup
 1. mk directory, cd into into it 
 2. npm init -y: to generate package.json
-3. npm install express dotenv cors firebase-admin: install express, env and firebase
+3. npm install express dotenv firebase-admin: install express, env and firebase
 
 
 id,wages,secondary income, interest, support payment, others
