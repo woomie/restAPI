@@ -14,7 +14,7 @@ const serviceAccount = {
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://restapi-1d162-default-rtdb.firebaseio.com"
+    databaseURL: process.env.FIREBASE_DATABASE_URL
   });
 
 const database = admin.database(); 
