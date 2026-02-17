@@ -7,187 +7,208 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Money Tracking Api</title>
+    <title>Money Tracking API</title>
 </head>
 <body>
     <header>
-        <h2>Money Tracking API</h2`1    >
+        <div class="header-content">
+            <h1>💰 Money Tracking API</h1>
+            <p>A RESTful API for managing income, expenses, and user accounts</p>
+        </div>
     </header>
     
-    <div class="contents">
-        <div class="table-of-content">
-            <h4>Table of content</h4>
-            <ol>
-                <li>Overview</li>
-                <li>Base Url</li>
-                <li>Installation</li>
-                <li>Endpoints</li>
-                
-                
-            </ol>
-        </div>
-        <div class="endpoints">
-            <div class="overview">
-                <h3>Project Overview</h3>
-                <p>This API allows users to manage their expenses and income in a system. It supports basic CRUD (Create, Read, Update, Delete) operations for both income and expense records. The API is designed to handle user data related to financial tracking, including savings, payment obligations, and housing expenses.</p>
-            </div>
-            <h3>Base Url</h3>
-            <div class="code-base">
-                <p>http://localhost:4000/</p>
-            </div>
-            <p class="padding">To use this project, follow the steps below</p>
-            <h3>Installation</h3>
-            <div class="code-base">
-                <p>git clone https://github.com/woomie/restAPI</p>
-                <p>cd project-name</p>
-                <p>npm install</p>
-                <p>node index.js</p>
-            </div>
-            
-            <h3 class="padding">User Endpoints</h3>
-            <h4 class="padding">Get/income</h4>
-            <p>Retrieve all users</p> 
-            <ul>
-                <li>URL:/users</li>
-                <li>Method:GET</li>
-                <li>Response:</li>
+    <div class="container">
+        <nav class="sidebar">
+            <h3>Table of Contents</h3>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#baseurl">Base URL</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#users">User Endpoints</a></li>
+                <li><a href="#income">Income Endpoints</a></li>
+                <li><a href="#expenses">Expense Endpoints</a></li>
             </ul>
-            <div class="code-base">
-                <pre>
-                 { 
-                    "address": {
-                      "city": "Metropolis",
-                      "street": "123 Main St",
-                      "suite": "Apt. 1",
-                      "zipcode": "12345"
-                    },
-                    "email": "john.doe@example.com",
-                    "id": 1,
-                    "name": "John Doe",
-                    "username": "johndoe"
-                  },
-                  
-                </pre>
-            </div>
-            <h4 class="padding">Get/income/:id</h4>
-            <p>Retrieve a specific income by id</p>
-             
-            <ul>
-                <li>URL:/income/:id</li>
-                <li>Method:GET</li>
-                <li>Parameters: id, the unique id of the income record</li>
-                <li>Response:</li>
-            </ul>
-            <div class="code-base">
-                <pre>
-                    {
-                        "interest": 200,
-                        "others": 100,
-                        "secondary_income": 1500,
-                        "support_payment": 0,
-                        "wages": 5000
-                      }
-                      
-                  
-                </pre>
-            </div>
-            <h4 class="padding">Post/income</h4>
-            <p>create new income</p> 
-            <ul>
-                <li>URL:/income</li>
-                <li>Method:POST</li>
-                <li>Request body:</li>
-            </ul>
-            <div class="code-base">
-                <pre>
-                    {
-                        "interest": 200,
-                        "others": 100,
-                        "secondary_income": 1500,
-                        "support_payment": 0,
-                        "wages": 5000
-                      }  
-                </pre>
-               
-            </div>
-            <br>
-            <li >Response:</li>
-            <div class="code-base">
-                <pre>
-                    {
-                        "message": "A new Income was added",
-                        "data": {
-                          "id": 1,
-                          "interest": 200,
-                          "others": 100,
-                          "secondary_income": 1500,
-                          "support_payment": 0,
-                          "wages": 5000
-                        }
-                      }
-                       
-                </pre>
-            </div>
+        </nav>
+        
+        <main class="content">
+            <section id="overview" class="section">
+                <h2>📋 Project Overview</h2>
+                <p>This API allows users to manage their expenses and income in a system. It supports basic CRUD (Create, Read, Update, Delete) operations for users, income, and expense records. The API is designed to handle user data related to financial tracking, including savings, payment obligations, and housing expenses.</p>
+            </section>
 
-            <h4 class="padding">PUT/income/:id</h4>
-            <p>retrieve a specific income by id</p> 
-            <ul>
-                <li>URL:/income/:id</li>
-                <li>Method:PUT</li>
-                <li>Parameters: id, the unique id of the income record</li>
-                <li>Response:</li>
-            </ul>
-            <div class="code-base">
-                <pre>
-                    {
-                        "interest": 200,
-                        "others": 100,
-                        "secondary_income": 1500,
-                        "support_payment": 0,
-                        "wages": 5000
-                      }  
-                </pre>
-               
-            </div>
-            <br>
-            <li >Response:</li>
-            <div class="code-base">
-                <pre>
-                    {
-                        "message": "A new Income was added",
-                        "data": {
-                          "id": 1,
-                          "interest": 200,
-                          "others": 100,
-                          "secondary_income": 1500,
-                          "support_payment": 0,
-                          "wages": 5000
-                        }
-                      }
-                       
-                </pre>
-            </div>
-            <h4 class="padding">DELETE/income/:id</h4>
-            <p>retrieve a specific income by id</p> 
-            <ul>
-                <li>URL:/income/:id</li>
-                <li>Method:DELETE</li>
-                <li>Parameters: id, the unique id of the income record</li>
-                <li>Response:</li>
-            </ul>
-            <div class="code-base">
-                <pre>
-                    {
-                        "message": "Income deleted successfully"
-                      }
-                      
-                  
-                </pre>
-            </div>
-        </div>
+            <section id="baseurl" class="section">
+                <h2>🔗 Base URL</h2>
+                <div class="code-block">
+                    <code>http://localhost:3000</code>
+                </div>
+            </section>
+
+            <section id="installation" class="section">
+                <h2>⚙️ Installation</h2>
+                <div class="code-block">
+                    <pre><code>git clone https://github.com/woomie/restAPI
+cd restAPI
+npm install
+node index.js</code></pre>
+                </div>
+            </section>
+
+            <section id="users" class="section">
+                <h2>👥 User Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/users</h3>
+                        <p>Retrieve all users</p>
+                        <div class="code-block">
+                            <pre><code>{
+  "address": {
+    "city": "Metropolis",
+    "street": "123 Main St",
+    "suite": "Apt. 1",
+    "zipcode": "12345"
+  },
+  "email": "john.doe@example.com",
+  "id": 1,
+  "name": "John Doe",
+  "username": "johndoe"
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/users/:id</h3>
+                        <p>Retrieve a specific user by ID</p>
+                        <p><strong>Parameters:</strong> id (unique identifier)</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge post">POST</div>
+                    <div class="endpoint-info">
+                        <h3>/users</h3>
+                        <p>Create a new user</p>
+                        <p><strong>Required Fields:</strong> name, username, email, address (city, street, suite, zipcode)</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge put">PUT</div>
+                    <div class="endpoint-info">
+                        <h3>/users/:id</h3>
+                        <p>Update an existing user</p>
+                        <p><strong>Parameters:</strong> id (unique identifier)</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge delete">DELETE</div>
+                    <div class="endpoint-info">
+                        <h3>/users/:id</h3>
+                        <p>Delete a user</p>
+                        <p><strong>Parameters:</strong> id (unique identifier)</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="income" class="section">
+                <h2>📈 Income Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/income</h3>
+                        <p>Retrieve all income records</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/income/:id</h3>
+                        <p>Retrieve a specific income record by ID</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge post">POST</div>
+                    <div class="endpoint-info">
+                        <h3>/income</h3>
+                        <p>Create a new income record</p>
+                        <p><strong>Fields:</strong> wages, secondary_income, support_payment, interest, others</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge put">PUT</div>
+                    <div class="endpoint-info">
+                        <h3>/income/:id</h3>
+                        <p>Update an income record</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge delete">DELETE</div>
+                    <div class="endpoint-info">
+                        <h3>/income/:id</h3>
+                        <p>Delete an income record</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="expenses" class="section">
+                <h2>📉 Expense Endpoints</h2>
+                
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/expenses</h3>
+                        <p>Retrieve all expense records</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge get">GET</div>
+                    <div class="endpoint-info">
+                        <h3>/expenses/:id</h3>
+                        <p>Retrieve a specific expense record by ID</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge post">POST</div>
+                    <div class="endpoint-info">
+                        <h3>/expenses</h3>
+                        <p>Create a new expense record</p>
+                        <p><strong>Fields:</strong> savings, payment_obligations, housing</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge put">PUT</div>
+                    <div class="endpoint-info">
+                        <h3>/expenses/:id</h3>
+                        <p>Update an expense record</p>
+                    </div>
+                </div>
+
+                <div class="endpoint">
+                    <div class="method-badge delete">DELETE</div>
+                    <div class="endpoint-info">
+                        <h3>/expenses/:id</h3>
+                        <p>Delete an expense record</p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Built with ❤️ | <a href="https://github.com/woomie/restAPI">GitHub Repository</a></p>
+            </footer>
+        </main>
     </div>
-    
-    
-
 </body>
 </html>
