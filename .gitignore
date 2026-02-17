@@ -1,3 +1,4 @@
 node_modules/
 .env
 restapi-1d162-firebase-adminsdk-fbsvc-dfd812bfb5.json
+config.js
